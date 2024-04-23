@@ -17,6 +17,15 @@
                             <option name="y" value="308" />
                           </Point>
                         </option>
+                        <option name="myPositions">
+                          <map>
+                            <entry key="action_detalleFragment_to_nav_gallery">
+                              <value>
+                                <LayoutPositions />
+                              </value>
+                            </entry>
+                          </map>
+                        </option>
                       </LayoutPositions>
                     </value>
                   </entry>
@@ -41,6 +50,15 @@
                             <option name="y" value="-23" />
                           </Point>
                         </option>
+                        <option name="myPositions">
+                          <map>
+                            <entry key="action_nav_gallery_to_detalleFragment">
+                              <value>
+                                <LayoutPositions />
+                              </value>
+                            </entry>
+                          </map>
+                        </option>
                       </LayoutPositions>
                     </value>
                   </entry>
@@ -49,8 +67,8 @@
                       <LayoutPositions>
                         <option name="myPosition">
                           <Point>
-                            <option name="x" value="59" />
-                            <option name="y" value="-3" />
+                            <option name="x" value="60" />
+                            <option name="y" value="-67" />
                           </Point>
                         </option>
                       </LayoutPositions>
