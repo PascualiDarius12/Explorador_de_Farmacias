@@ -44,8 +44,10 @@ public class MapsFragment extends Fragment {
          */
         @Override
         public void onMapReady(GoogleMap googleMap) {
+            Log.d("mapa","cargo mapa");
             googleMap.clear(); // Elimina todos los marcadores existentes en el mapa
             if (l != null) {
+                Log.d("mapa","cargo marcadores");
                 LatLng miUbicacion = new LatLng(l.getLatitude(), l.getLongitude());
                 googleMap.addMarker(new MarkerOptions().position(miUbicacion).title("Mi Ubicacion"));
                 googleMap.setMapType(SlideshowFragment.tipoMapa);
@@ -75,6 +77,9 @@ public class MapsFragment extends Fragment {
             public void onChanged(Location location) {
                 l = location;
                 actualizarMapa();
+
+
+
             }
         });
 
@@ -88,7 +93,14 @@ public class MapsFragment extends Fragment {
         vm.ubicacionActualizable();
 
 
+
         return inflater.inflate(R.layout.fragment_maps, container, false);
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+
     }
 
     @Override
@@ -99,6 +111,8 @@ public class MapsFragment extends Fragment {
         if (mapFragment != null) {
             mapFragment.getMapAsync(callback);
         }
+
+
     }
 
     private void actualizarMapa() {
@@ -114,12 +128,13 @@ public class MapsFragment extends Fragment {
     public void onDestroyView() {
         super.onDestroyView();
         // Limpiar el mapa y cualquier otro recurso asociado a la vista
-        if (getActivity() != null && !getActivity().isFinishing()) {
+        /*if (getActivity() != null && !getActivity().isFinishing()) {
             SupportMapFragment mapFragment = (SupportMapFragment) getChildFragmentManager().findFragmentById(R.id.map);
             if (mapFragment != null) {
                 getChildFragmentManager().beginTransaction().remove(mapFragment).commitAllowingStateLoss();
             }
-        }
+        }*/
+        vm.pararUbicacionActualizable();
     }
 }
 

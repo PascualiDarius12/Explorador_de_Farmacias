@@ -25,14 +25,14 @@ public class HomeFragment extends Fragment {
 
         binding = FragmentHomeBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
-        vm.getmLocation().observe(getViewLifecycleOwner(), new Observer<Location>() {
+        /*vm.getmLocation().observe(getViewLifecycleOwner(), new Observer<Location>() {
             @Override
             public void onChanged(Location location) {
                 binding.textHome.setText("Latitud:"+location.getLatitude()+", Altitud:"+ location.getAltitude());
             }
         });
 
-        vm.ubicacionActualizable();
+        vm.ubicacionActualizable();*/
         return root;
     }
 
